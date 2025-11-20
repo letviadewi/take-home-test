@@ -1,36 +1,190 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Users Management App
 
-## Getting Started
+A modern, responsive user management application built with Next.js 13+, featuring a clean UI with search, sort, and detailed user profiles.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Responsive Design** - Optimized for both desktop and mobile devices
+- **Advanced Search** - Real-time filtering by name, email, or website
+- **Sort Functionality** - Sort users by name (A-Z, Z-A)
+- **User Details** - Comprehensive user profiles with company and address information
+- **Performance** - Built with Next.js App Router and React Query
+- **Modern UI** - Styled with Tailwind CSS
+- **Test Coverage** - Comprehensive unit tests with Jest and React Testing Library
+- **SEO Optimized** - Dynamic metadata generation for better search visibility
+
+## Tech Stack
+
+- **Framework**: Next.js 13.5.6 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Data Fetching**: TanStack Query (React Query)
+- **Testing**: Jest + React Testing Library
+- **API**: JSONPlaceholder
+
+## Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd users-management-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 🏗 Project Structure
+
+```
+app/
+├── globals.css              # Global styles
+├── layout.tsx              # Root layout
+├── page.tsx                # Home page
+└── users/
+    ├── page.tsx            # Users list page
+    ├── loading.tsx         # Loading skeleton
+    ├── error.tsx           # Error boundary
+    └── [id]/
+        ├── page.tsx        # User detail page (Server Component)
+        ├── detail-user-client.tsx
+        ├── loading.tsx     # Detail loading
+        └── error.tsx       # Detail error boundary
+
+components/
+├── ui/
+│   ├── table.tsx           # Reusable table component
+│   ├── search-bar.tsx      # Search input
+│   ├── sort-dropdown.tsx   # Sort functionality
+│   ├── error.tsx           # Error component
+│   └── skeleton/           # Loading skeletons
+└── providers/
+    └── react-query-provider.tsx
+
+hooks/
+└── queries/
+    └── users.ts            # React Query hooks
+
+__tests__/
+└── users.test.tsx          # Test files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features Implementation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Users List (`/users`)
+- **Responsive Table**: Displays name, email, and website
+- **Real-time Search**: Filter users by name, email, or website
+- **Sorting**: Sort users alphabetically by name
+- **Loading States**: Beautiful skeleton loading
+- **Error Handling**: Graceful error states
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### User Details (`/users/[id]`)
+- **Comprehensive Profile**: All user information including company and address
+- **SEO Optimization**: Dynamic metadata generation
+- **Navigation**: Easy back-to-list functionality
+- **Responsive Card**: Clean, mobile-friendly layout
 
-## Learn More
+### Performance Optimizations
+- **ISR Caching**: Static generation with revalidation
+- **Efficient Fetching**: React Query for client-side data
+- **Code Splitting**: Automatic with Next.js App Router
 
-To learn more about Next.js, take a look at the following resources:
+## Testing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run the test suite:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# Run tests
+npm test
 
-## Deploy on Vercel
+# Run tests with coverage
+npm test -- --coverage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Run tests in watch mode
+npm test -- --watch
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Test Coverage
+- Users List: Renders rows, filters by search, shows loading & error states
+- User Details: Renders details for given ID, shows loading & error states
+- Network calls properly mocked
+- Responsive behavior tested
+
+## Deployment
+
+### Vercel (Recommended)
+```bash
+npm install -g vercel
+vercel
+```
+
+### Other Platforms
+The app can be deployed on any platform that supports Next.js:
+- Netlify
+- AWS Amplify
+- Railway
+- Digital Ocean App Platform
+
+## Responsive Breakpoints
+
+- **Mobile**: < 768px (Card-based layout)
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px (Table-based layout)
+
+## Design System
+
+### Colors
+- Primary: `blue-500`, `blue-600`
+- Background: `gray-50`, `white`
+- Text: `gray-900`, `gray-600`, `gray-400`
+- Borders: `gray-200`, `gray-300`
+
+### Typography
+- Headings: `font-semibold`, `font-bold`
+- Body: Regular weight
+- Labels: `font-medium`
+
+## Development Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run test         # Run tests
+npm run test:watch   # Run tests in watch mode
+npm run lint         # Run ESLint
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for providing fake API data
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+- [TanStack Query](https://tanstack.com/query) for data fetching management
+
+---
