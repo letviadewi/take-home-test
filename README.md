@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Users Management App
 
 A modern, responsive user management application built with Next.js 13+, featuring a clean UI with search, sort, and detailed user profiles.
@@ -188,3 +189,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [TanStack Query](https://tanstack.com/query) for data fetching management
 
 ---
+=======
+# mampu-take-home-test
+>>>>>>> c4f46d819d503ca161d11700e867808bcaf595a1
