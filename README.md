@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-# 🚀 Users Management App
+# Users Management App
 
 A modern, responsive user management application built with Next.js 13+, featuring a clean UI with search, sort, and detailed user profiles.
 
-## ✨ Features
+## Features
 
 - **Responsive Design** - Optimized for both desktop and mobile devices
 - **Advanced Search** - Real-time filtering by name, email, or website
@@ -48,32 +47,27 @@ A modern, responsive user management application built with Next.js 13+, featuri
 4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 🏗 Project Structure
+## Project Structure
 
 ```
 app/
 ├── globals.css              # Global styles
 ├── layout.tsx              # Root layout
 ├── page.tsx                # Home page
+├── providers.tsx           # Providers for React Query
 └── users/
     ├── page.tsx            # Users list page
-    ├── loading.tsx         # Loading skeleton
-    ├── error.tsx           # Error boundary
     └── [id]/
         ├── page.tsx        # User detail page (Server Component)
-        ├── detail-user-client.tsx
-        ├── loading.tsx     # Detail loading
-        └── error.tsx       # Detail error boundary
 
 components/
 ├── ui/
 │   ├── table.tsx           # Reusable table component
-│   ├── search-bar.tsx      # Search input
-│   ├── sort-dropdown.tsx   # Sort functionality
+│   ├── searchBar.tsx      # Search input
+│   ├── sortDropdown.tsx   # Sort functionality
 │   ├── error.tsx           # Error component
 │   └── skeleton/           # Loading skeletons
-└── providers/
-    └── react-query-provider.tsx
+
 
 hooks/
 └── queries/
@@ -123,14 +117,6 @@ npm test -- --watch
 - User Details: Renders details for given ID, shows loading & error states
 - Network calls properly mocked
 - Responsive behavior tested
-
-## Deployment
-
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
 
 ### Other Platforms
 The app can be deployed on any platform that supports Next.js:
@@ -189,6 +175,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [TanStack Query](https://tanstack.com/query) for data fetching management
 
 ---
-=======
-# mampu-take-home-test
->>>>>>> c4f46d819d503ca161d11700e867808bcaf595a1
